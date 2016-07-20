@@ -93,12 +93,12 @@ var ChineseWebFont = function () {
 
       fontmin.run(function (err, files) {
         if (err) throw err;
-        _this._generateExample(src.replace(/\.[^/.]+$/, ''), fontFamily, text);
+        _this._generateExample(src.replace(/\.[^/.]+$/, ''), fontFamily, text, dest);
       });
     }
   }, {
     key: '_generateExample',
-    value: function _generateExample(css, fontFamily, text) {
+    value: function _generateExample(css, fontFamily, text, dest) {
       var exampleHTML = '<!DOCTYPE html><html><head><title>Fontmin Demo</title><meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="' + css + '.css"></link><style type="text/css">html { font-family: "' + fontFamily + '",arial,sans-serif; }</style></head><body><p>' + text + '</p></body></html>';
       _fs2.default.writeFile(dest + '/example.html', exampleHTML, function (err) {
         if (err) throw err;
