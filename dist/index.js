@@ -77,6 +77,8 @@ var ChineseWebFont = function () {
   }, {
     key: '_outputWebFont',
     value: function _outputWebFont(_ref2, text) {
+      var _this = this;
+
       var src = _ref2.src;
       var fontFamily = _ref2.fontFamily;
       var dest = _ref2.dest;
@@ -91,9 +93,13 @@ var ChineseWebFont = function () {
 
       fontmin.run(function (err, files) {
         if (err) throw err;
+        _this._generateExample(src.replace(/\.[^/.]+$/, ''), fontFamily, text);
       });
-
-      var exampleHTML = '<!DOCTYPE html><html><head><title>Fontmin Demo</title><meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="' + src.replace(/\.[^/.]+$/, '') + '.css"></link><style type="text/css">html { font-family: "' + fontFamily + '",arial,sans-serif; }</style></head><body><p>' + text + '</p></body></html>';
+    }
+  }, {
+    key: '_generateExample',
+    value: function _generateExample(css, fontFamily, text) {
+      var exampleHTML = '<!DOCTYPE html><html><head><title>Fontmin Demo</title><meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="' + css + '.css"></link><style type="text/css">html { font-family: "' + fontFamily + '",arial,sans-serif; }</style></head><body><p>' + text + '</p></body></html>';
       _fs2.default.writeFile(dest + '/example.html', exampleHTML, function (err) {
         if (err) throw err;
       });
@@ -143,12 +149,12 @@ var ChineseWebFont = function () {
   }, {
     key: 'run',
     value: function run() {
-      var _this = this;
+      var _this2 = this;
 
       if (!this._isValid()) return;
 
       this._getChineseText(this._file, function (chineseText) {
-        _this._outputWebFont(_this._font, _chineseConv2.default.sify(chineseText + _this._text));
+        _this2._outputWebFont(_this2._font, _chineseConv2.default.sify(chineseText + _this2._text));
       });
     }
   }]);
