@@ -12,14 +12,24 @@
   "scripts": {
     "start": "babel index.js -d dist"
   },
-  "author": "ayming",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayming/chinese-webfont-generator.git"
+  },
+  "author": "ayming <ayming1011@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-0": "^6.5.0",
+  "dependencies": {
     "chinese-conv": "^1.0.1",
     "fontmin": "^0.9.6",
     "glob": "^7.0.5"
-  }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0"
+  },
+  "bugs": {
+    "url": "https://github.com/ayming/chinese-webfont-generator/issues"
+  },
+  "homepage": "https://github.com/ayming/chinese-webfont-generator#readme"
 }
