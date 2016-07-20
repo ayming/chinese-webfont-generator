@@ -1,6 +1,6 @@
 {
   "name": "chinese-webfont-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Webfont converter for Chinese characters in project",
   "main": "dist/index.js",
   "keywords": [
