@@ -59,9 +59,16 @@ export default class ChineseWebFont {
 
     fontmin.run((err, files) => {
       if (err) throw err;
+      this._generateExample(
+        src.replace(/\.[^/.]+$/, ''),
+        fontFamily,
+        text
+      );
     });
+  }
 
-    const exampleHTML = `<!DOCTYPE html><html><head><title>Fontmin Demo</title><meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="${src.replace(/\.[^/.]+$/, '')}.css"></link><style type="text/css">html { font-family: "${fontFamily}",arial,sans-serif; }</style></head><body><p>${text}</p></body></html>`;
+  _generateExample(css, fontFamily, text) {
+    const exampleHTML = `<!DOCTYPE html><html><head><title>Fontmin Demo</title><meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="${css}.css"></link><style type="text/css">html { font-family: "${fontFamily}",arial,sans-serif; }</style></head><body><p>${text}</p></body></html>`;
     fs.writeFile(`${dest}/example.html`, exampleHTML, (err) => {
       if (err) throw err;
     });
