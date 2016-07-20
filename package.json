@@ -1,0 +1,25 @@
+{
+  "name": "chinese-webfont-generator",
+  "version": "0.0.1",
+  "description": "Webfont converter for Chinese characters in project",
+  "main": "dist/index.js",
+  "keywords": [
+    "Chinese",
+    "webfont",
+    "converter",
+    "generator"
+  ],
+  "scripts": {
+    "start": "babel index.js -d dist"
+  },
+  "author": "ayming",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chinese-conv": "^1.0.1",
+    "fontmin": "^0.9.6",
+    "glob": "^7.0.5"
+  }
+}
