@@ -1,6 +1,6 @@
 {
   "name": "chinese-webfont-generator",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Webfont converter for Chinese characters in project",
   "main": "dist/index.js",
   "keywords": [
@@ -10,7 +10,8 @@
     "generator"
   ],
   "scripts": {
-    "start": "babel index.js -d dist"
+    "build": "babel index.js -d dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",

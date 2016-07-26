@@ -35,7 +35,7 @@ export default class ChineseWebFont {
         fs.readFile(file, 'utf8', (err, data) => {
           count++;
           if (err) console.log(err);
-          chineseText += data.match(chineseRegex).join('');
+          chineseText += (data.match(chineseRegex) || []).join('');
           if (files.length === count) callback(chineseText);
         });
       });
