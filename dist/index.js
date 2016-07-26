@@ -68,7 +68,7 @@ var ChineseWebFont = function () {
           _fs2.default.readFile(file, 'utf8', function (err, data) {
             count++;
             if (err) console.log(err);
-            chineseText += data.match(chineseRegex).join('');
+            chineseText += (data.match(chineseRegex) || []).join('');
             if (files.length === count) callback(chineseText);
           });
         });

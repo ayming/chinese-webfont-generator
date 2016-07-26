@@ -121,9 +121,10 @@ export default class ChineseWebFont {
     this._getChineseText(
       this._file,
       (chineseText) => {
+        const method = this._type === TC ? 'tify' : 'sify';
         this._outputWebFont(
           this._font,
-          chineseConv.sify(chineseText + this._text)
+          chineseConv[method](chineseText + this._text)
         );
       }
     );
