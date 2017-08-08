@@ -10,8 +10,10 @@
     "generator"
   ],
   "scripts": {
-    "build": "babel index.js -d dist",
-    "prepublish": "npm run build"
+    "build": "babel src/index.js -o dist/index.js",
+    "prepublish": "npm run lint && npm run build",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
